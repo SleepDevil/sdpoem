@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SdPoem</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">首页</string>
+    <string name="title_poemdb">诗词库</string>
+    <string name="title_games">小游戏</string>
+    <string name="title_own_poem">随笔</string>
+    <string name="title_my">我的</string>
+</resources>
