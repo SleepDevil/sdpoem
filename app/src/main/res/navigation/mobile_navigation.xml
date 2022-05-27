@@ -19,19 +19,19 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.sdpoem.ui.notifications.NotificationsFragment"
+        android:name="com.example.sdpoem.ui.game.GameFragment"
         android:label="@string/title_games"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_game" />
 
     <fragment
         android:id="@+id/navigation_own_poem"
-        android:name="com.example.sdpoem.ui.notifications.NotificationsFragment"
+        android:name="com.example.sdpoem.ui.write.WriteFragment"
         android:label="@string/title_own_poem"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_write" />
 
     <fragment
         android:id="@+id/navigation_my"
-        android:name="com.example.sdpoem.ui.notifications.NotificationsFragment"
+        android:name="com.example.sdpoem.ui.my.MyFragment"
         android:label="@string/title_my"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_my" />
 </navigation>

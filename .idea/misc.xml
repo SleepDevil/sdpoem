@@ -8,8 +8,10 @@
         <entry key="..\:/SdPoem/app/src/main/res/layout/activity_main.xml" value="0.486013986013986" />
         <entry key="..\:/SdPoem/app/src/main/res/layout/activity_main2.xml" value="0.8072289156626506" />
         <entry key="..\:/SdPoem/app/src/main/res/layout/fragment_dashboard.xml" value="0.22854387656702024" />
+        <entry key="..\:/SdPoem/app/src/main/res/layout/fragment_game.xml" value="0.12962962962962962" />
         <entry key="..\:/SdPoem/app/src/main/res/layout/fragment_home.xml" value="0.25555555555555554" />
         <entry key="..\:/SdPoem/app/src/main/res/layout/fragment_notifications.xml" value="0.28833172613307617" />
+        <entry key="..\:/SdPoem/app/src/main/res/layout/fragment_write.xml" value="0.12962962962962962" />
       </map>
     </option>
   </component>
