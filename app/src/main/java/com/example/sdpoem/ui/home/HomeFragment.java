@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -40,8 +41,30 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.randomPoem;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView poemContent = binding.randomPoemContent;
+        final TextView poemTitle = binding.randomPoemTitle;
+        final TextView poemAuthor = binding.randomPoemAuthor;
+
+        final Observer<PoemResponse> nameObserver = new Observer<PoemResponse>() {
+            @Override
+            public void onChanged(PoemResponse poemResponse) {
+                poemContent.setText(poemResponse.content);
+                poemTitle.setText(poemResponse.title);
+                poemAuthor.setText(poemResponse.author);
+            }
+
+//            @Override
+//            public void onChanged(@Nullable final String newName) {
+//                // Update the UI, in this case, a TextView.
+//                Log.d("TAG", "onChanged: " + newName);
+////                poemContent.setText(newName);
+//            }
+        };
+
+        homeViewModel.getTotalText().observe(getViewLifecycleOwner(), nameObserver);
+//        homeViewModel.getContentText().observe(getViewLifecycleOwner(), poemTitle::setText);
+//        homeViewModel.getContentText().observe(getViewLifecycleOwner(), poemAuthor::setText);
+
 
         SwipeRefreshLayout swipeRefreshPoem = root.findViewById(R.id.swiperefresh);
         swipeRefreshPoem.setOnRefreshListener(

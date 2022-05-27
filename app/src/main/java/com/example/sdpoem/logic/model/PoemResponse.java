@@ -3,13 +3,13 @@ package com.example.sdpoem.logic.model;
 import com.google.gson.annotations.SerializedName;
 
 public class PoemResponse {
-    private String id;
-    private String author;
-    private String title;
-    private String content;
-    private String update_time;
-    private Boolean modified;
-    private String type;
+    public String id;
+    public String author;
+    public String title;
+    public String content;
+    public String update_time;
+    public Boolean modified;
+    public String type;
 
     public String getId() {
         return id;

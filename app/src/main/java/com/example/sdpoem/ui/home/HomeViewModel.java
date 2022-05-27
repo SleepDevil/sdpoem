@@ -17,12 +17,19 @@ import retrofit2.Response;
 
 public class HomeViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
+    private final MutableLiveData<PoemResponse> poemResponse;
+//    private final MutableLiveData<String> poemTitle;
+//    private final MutableLiveData<String> poemAuthor;
+
 
     public Callback<PoemResponse> responseCallback = new Callback<PoemResponse>() {
         @Override
         public void onResponse(Call<PoemResponse> call, Response<PoemResponse> response) {
-            mText.setValue(response.body().getContent());
+            PoemResponse res = response.body();
+            Log.d("TAG", "onResponse: " + res);
+            poemResponse.setValue(res);
+//            poemTitle.setValue(res.title);
+//            poemAuthor.setValue(res.author);
         }
 
         @Override
@@ -31,16 +38,14 @@ public class HomeViewModel extends ViewModel {
     };
 
     public HomeViewModel() {
-        mText = new MutableLiveData<>();
+        poemResponse = new MutableLiveData<>();
+//        poemTitle = new MutableLiveData<>();
+//        poemAuthor = new MutableLiveData<>();
     }
 
-    public LiveData<String> getText() {
+    public LiveData<PoemResponse> getTotalText() {
         PoemService poemService = ServiceCreator.create(PoemService.class);
         poemService.getRandomPoem().enqueue(responseCallback);
-        return mText;
-    }
-
-    public void setText(String toSetVal) {
-        mText.setValue(toSetVal);
+        return poemResponse;
     }
 }
