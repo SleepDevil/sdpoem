@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/quantangshi"
+        android:title="全唐诗" />
+
+    <item
+        android:id="@+id/quansongshi"
+        android:title="全宋诗" />
+
+    <item
+        android:id="@+id/quansongci"
+        android:title="全宋词" />
+
+    <item
+        android:id="@+id/huajianji"
+        android:title="五代·花间集" />
+
+    <item
+        android:id="@+id/nantang"
+        android:title="五代·南唐二主词" />
+
+    <item
+        android:id="@+id/lunyu"
+        android:title="论语" />
+
+    <item
+        android:id="@+id/shijing"
+        android:title="诗经" />
+
+    <item
+        android:id="@+id/youmengying"
+        android:title="幽梦影" />
+
+    <item
+        android:id="@+id/sishuwujing"
+        android:title="四书五经" />
+
+</menu>
