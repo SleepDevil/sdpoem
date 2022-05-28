@@ -97,7 +97,9 @@ public class ItemFragment extends Fragment {
                 PlaceholderContent.PlaceholderItem poemBean = gson.fromJson(jelement, PlaceholderContent.PlaceholderItem.class);
                 PlaceholderItemList.add(poemBean);
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(PlaceholderItemList));
+            MyItemRecyclerViewAdapter mAdapter = new MyItemRecyclerViewAdapter(PlaceholderItemList);
+
+            recyclerView.setAdapter(mAdapter);
         } catch (Exception e) {
             Log.d("TAG", "MyItemRecyclerViewAdapter: errerer" + e);
         }
