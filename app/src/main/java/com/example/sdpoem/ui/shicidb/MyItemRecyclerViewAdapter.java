@@ -32,8 +32,17 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     public void onBindViewHolder(final ViewHolder holder, int position) {
         PlaceholderItem currentItem = mValues.get(position);
 //        holder.mItem = mValues.get(position);
-        holder.mTitleText.setText(currentItem.rhythmic);
-        holder.mDescriptionText.setText(currentItem.tags.get(0));
+        if (currentItem.title != null) {// 唐诗为title，宋词为rhythmic
+            holder.mTitleText.setText(currentItem.title);
+        } else {
+            holder.mTitleText.setText(currentItem.rhythmic);
+        }
+        if (currentItem.tags != null) {
+            holder.mDescriptionText.setText(currentItem.tags.get(0));
+        }else {
+            // 宋诗无tag，动态删除descript text TextView
+            ((ViewGroup) holder.mDescriptionText.getParent()).removeView(holder.mDescriptionText);
+        }
         holder.mAuthorText.setText(currentItem.author);
     }
 

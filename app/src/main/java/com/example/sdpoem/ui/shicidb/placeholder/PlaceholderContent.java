@@ -7,13 +7,6 @@ import java.util.Map;
 
 public class PlaceholderContent {
 
-    public static final List<PlaceholderItem> ITEMS = new ArrayList<PlaceholderItem>();
-
-    public static final Map<String, PlaceholderItem> ITEM_MAP = new HashMap<String, PlaceholderItem>();
-
-    private static final int COUNT = 25;
-
-
     public static class PlaceholderItem {
         public final String author;
         public final String title;

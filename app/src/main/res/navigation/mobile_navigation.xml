@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_shicidb"
         android:name="com.example.sdpoem.ui.shicidb.ShicidbFragment"
         android:label="@string/title_poemdb"
         tools:layout="@layout/fragment_shicidb" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_game"
         android:name="com.example.sdpoem.ui.game.GameFragment"
         android:label="@string/title_games"
         tools:layout="@layout/fragment_game" />

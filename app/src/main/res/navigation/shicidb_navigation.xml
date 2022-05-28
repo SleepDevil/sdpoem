@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/shicidb_left_navigation"
+    android:id="@+id/shicidb_navigation"
     app:startDestination="@+id/quantangshi">
     <fragment
         android:id="@+id/quantangshi"
@@ -10,28 +10,28 @@
         android:label="全唐诗"
         tools:layout="@layout/fragment_item_list" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/quansongshi"-->
-<!--        android:name="com.example.sdpoem.ui.shicidb.ItemFragment"-->
-<!--        android:label="全宋诗"-->
-<!--        tools:layout="@layout/fragment_item_list" />-->
+    <fragment
+        android:id="@+id/quansongshi"
+        android:name="com.example.sdpoem.ui.shicidb.ItemFragment"
+        android:label="全宋诗"
+        tools:layout="@layout/fragment_item_list" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/quansongci"-->
-<!--        android:name="com.example.sdpoem.ui.game.GameFragment"-->
-<!--        android:label="全宋词"-->
-<!--        tools:layout="@layout/fragment_item_list" />-->
+    <fragment
+        android:id="@+id/quansongci"
+        android:name="com.example.sdpoem.ui.game.GameFragment"
+        android:label="全宋词"
+        tools:layout="@layout/fragment_item_list" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/huajianji"-->
-<!--        android:name="com.example.sdpoem.ui.write.WriteFragment"-->
-<!--        android:label="五代·花间集"-->
-<!--        tools:layout="@layout/fragment_item_list" />-->
+    <fragment
+        android:id="@+id/huajianji"
+        android:name="com.example.sdpoem.ui.write.WriteFragment"
+        android:label="五代·花间集"
+        tools:layout="@layout/fragment_item_list" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/nantang"-->
-<!--        android:name="com.example.sdpoem.ui.my.MyFragment"-->
-<!--        android:label="五代·南唐二主词"-->
-<!--        tools:layout="@layout/fragment_item_list" />-->
+    <fragment
+        android:id="@+id/nantang"
+        android:name="com.example.sdpoem.ui.my.MyFragment"
+        android:label="五代·南唐二主词"
+        tools:layout="@layout/fragment_item_list" />
 
 </navigation>
