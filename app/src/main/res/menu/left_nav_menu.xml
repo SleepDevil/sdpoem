@@ -19,7 +19,7 @@
 
         <item
             android:id="@+id/nantang"
-            android:title="五代·南唐二主词" />
+            android:title="五代·南唐二主" />
 
         <item
             android:id="@+id/lunyu"

@@ -8,7 +8,7 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/leftNav"
-        android:layout_width="120dp"
+        android:layout_width="134dp"
         android:layout_height="match_parent"
         app:menu="@menu/left_nav_menu" />
 
