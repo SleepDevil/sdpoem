@@ -12,7 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SdPoem">
         <activity
+            android:name=".ui.my.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.my.LoginActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".ui.shicidb.ShowPoemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.game.BeisongActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -95,6 +95,8 @@ public class ItemFragment extends Fragment {
             JsonArray array = JsonParser.parseString(json).getAsJsonArray();
             for (JsonElement jelement : array) {
                 PlaceholderContent.PlaceholderItem poemBean = gson.fromJson(jelement, PlaceholderContent.PlaceholderItem.class);
+                Log.d("TAG", "readData: tatata" + poemBean.paragraphs);
+
                 PlaceholderItemList.add(poemBean);
             }
             MyItemRecyclerViewAdapter mAdapter = new MyItemRecyclerViewAdapter(PlaceholderItemList);
