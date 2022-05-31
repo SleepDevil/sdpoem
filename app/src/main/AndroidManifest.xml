@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SdPoem">
         <activity
+            android:name=".ui.write.WritePoemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.game.ui.tiankong.TiankongActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.my.RegisterActivity"
             android:exported="false" />
         <activity

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.sdpoem.databinding.FragmentGameBinding;
+import com.example.sdpoem.ui.game.ui.tiankong.TiankongActivity;
 
 public class GameFragment extends Fragment {
 
@@ -27,6 +28,13 @@ public class GameFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), BeisongActivity.class);
+                startActivity(i);
+            }
+        });
+        binding.toTiankong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), TiankongActivity.class);
                 startActivity(i);
             }
         });
