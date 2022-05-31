@@ -3,6 +3,7 @@ package com.example.sdpoem.ui.game;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.sdpoem.R;
 import com.example.sdpoem.ui.game.ui.Beisong.BeisongFragment;

@@ -1,5 +1,6 @@
 package com.example.sdpoem.ui.game.ui.Beisong;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.sdpoem.R;
 import com.example.sdpoem.databinding.ActivityBeisongBinding;
@@ -35,6 +38,7 @@ public class BeisongFragment extends Fragment {
 
     private BeisongViewModel mViewModel;
     private ArrayList<String> paragraphs = new ArrayList<>();
+    private ArrayList<TextView> AnsTextViewList = new ArrayList<>();
 
 
     public static BeisongFragment newInstance() {
@@ -47,11 +51,41 @@ public class BeisongFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         binding = ActivityBeisongBinding.inflate(inflater, container, false);
         readData();
+        String ans;
         Random random = new Random();
-        binding.ans1.setText(paragraphs.get(random.nextInt(paragraphs.size())));
-        binding.ans2.setText(paragraphs.get(random.nextInt(paragraphs.size())));
-        binding.ans3.setText(paragraphs.get(random.nextInt(paragraphs.size())));
-        binding.ans4.setText(paragraphs.get(random.nextInt(paragraphs.size())));
+        int pos = random.nextInt(paragraphs.size());
+        if (pos % 2 == 0) {
+            ans = paragraphs.get(pos + 1);
+            // 偶數，为第一句，后一句为下划线
+            binding.topQuestion.setText(paragraphs.get(pos) + "，\n_______");
+        } else {
+            ans = paragraphs.get(pos - 1);
+            binding.topQuestion.setText("_______，\n" + paragraphs.get(pos));
+        }
+        AnsTextViewList.add(binding.ans1);
+        AnsTextViewList.add(binding.ans2);
+        AnsTextViewList.add(binding.ans3);
+        AnsTextViewList.add(binding.ans4);
+        int randomAnsPos = random.nextInt(AnsTextViewList.size());
+        for (int i = 0; i < AnsTextViewList.size(); i++) {
+            int finalI = i;
+            AnsTextViewList.get(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (finalI == randomAnsPos) {
+                        view.setBackgroundColor(Color.rgb(91, 255, 29));
+
+                    } else {
+                        view.setBackgroundColor(Color.rgb(240, 1, 2));
+                    }
+                }
+            });
+            if (i == randomAnsPos) {
+                AnsTextViewList.get(i).setText(ans);
+                continue;
+            }
+            AnsTextViewList.get(i).setText(paragraphs.get(random.nextInt(paragraphs.size())));
+        }
 
 //        return inflater.inflate(R.layout.activity_beisong, container, false);
         return binding.getRoot();
