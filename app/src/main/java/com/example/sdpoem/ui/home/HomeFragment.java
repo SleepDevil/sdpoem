@@ -52,19 +52,9 @@ public class HomeFragment extends Fragment {
                 poemTitle.setText(poemResponse.title);
                 poemAuthor.setText(poemResponse.author);
             }
-
-//            @Override
-//            public void onChanged(@Nullable final String newName) {
-//                // Update the UI, in this case, a TextView.
-//                Log.d("TAG", "onChanged: " + newName);
-////                poemContent.setText(newName);
-//            }
         };
 
         homeViewModel.getTotalText().observe(getViewLifecycleOwner(), nameObserver);
-//        homeViewModel.getContentText().observe(getViewLifecycleOwner(), poemTitle::setText);
-//        homeViewModel.getContentText().observe(getViewLifecycleOwner(), poemAuthor::setText);
-
 
         SwipeRefreshLayout swipeRefreshPoem = root.findViewById(R.id.swiperefresh);
         swipeRefreshPoem.setOnRefreshListener(
@@ -76,8 +66,8 @@ public class HomeFragment extends Fragment {
                         // This method performs the actual data-refresh operation.
                         // The method calls setRefreshing(false) when it's finished.
                         PoemService poemService = ServiceCreator.create(PoemService.class);
-                        poemService.getRandomPoem().enqueue(homeViewModel.responseCallback);
-                        swipeRefreshPoem.setRefreshing(false);
+                        poemService.getRandomPoem().enqueue(homeViewModel.responseCallback);// 重新获取数据
+                        swipeRefreshPoem.setRefreshing(false);// 取消刷新动画
                     }
                 }
         );

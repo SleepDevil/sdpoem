@@ -49,6 +49,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
                 String author = placeholderItem.author;
 
                 Intent intent = new Intent(parent.getContext(), ShowPoemActivity.class);
+                // 传递数据
                 intent.putExtra("paragraphs", deliverParagraphs);
                 intent.putExtra("title", title);
                 intent.putExtra("author", author);

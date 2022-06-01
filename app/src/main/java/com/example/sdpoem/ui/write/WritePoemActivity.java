@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.sdpoem.R;
 
@@ -39,7 +40,7 @@ interface PoemDao {
     List<Poem> getPoemList();
 }
 
-@Database(entities = {Poem.class}, version = 1)
+@Database(entities = {Poem.class}, version = 1, exportSchema = false)
 abstract class MyDatabase extends RoomDatabase {
     private static final String DATABASE_NAME = "written_poem";
     private static MyDatabase databaseInstance;
@@ -86,6 +87,8 @@ public class WritePoemActivity extends AppCompatActivity {
                     Log.d("TAG", "onClick: 444");
                     db.poemDao().insertPoem(new Poem(title, content, createDate));
                 }).start();
+                Toast.makeText(WritePoemActivity.this, "添加成功", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }

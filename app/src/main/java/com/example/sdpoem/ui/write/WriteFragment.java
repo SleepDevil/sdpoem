@@ -3,6 +3,7 @@ package com.example.sdpoem.ui.write;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,10 +57,11 @@ public class WriteFragment extends Fragment {
         });
         RecyclerView poemRecy = binding.writtemPoemsRecyclerview;
         new Thread(() -> {
+            Log.d("TAG", "onCreateView: " + poemDao.getPoemList());
             PoemList = poemDao.getPoemList();
             getActivity().runOnUiThread(() -> {
                 poemRecy.setAdapter(new PoemAdapter(PoemList));
-                poemRecy.setLayoutManager(new LinearLayoutManager(getContext()));
+                poemRecy.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
             });
         }).start();
 

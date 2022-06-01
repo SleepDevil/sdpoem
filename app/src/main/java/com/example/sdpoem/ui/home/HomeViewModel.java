@@ -16,20 +16,17 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class HomeViewModel extends ViewModel {
+    // 首页数据模型
 
     private final MutableLiveData<PoemResponse> poemResponse;
-//    private final MutableLiveData<String> poemTitle;
-//    private final MutableLiveData<String> poemAuthor;
+    // 随机推荐网络请求json数据格式
 
 
     public Callback<PoemResponse> responseCallback = new Callback<PoemResponse>() {
         @Override
         public void onResponse(Call<PoemResponse> call, Response<PoemResponse> response) {
             PoemResponse res = response.body();
-            Log.d("TAG", "onResponse: " + res);
             poemResponse.setValue(res);
-//            poemTitle.setValue(res.title);
-//            poemAuthor.setValue(res.author);
         }
 
         @Override
@@ -39,8 +36,6 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
         poemResponse = new MutableLiveData<>();
-//        poemTitle = new MutableLiveData<>();
-//        poemAuthor = new MutableLiveData<>();
     }
 
     public LiveData<PoemResponse> getTotalText() {

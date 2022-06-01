@@ -19,20 +19,11 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.sdpoem.R;
 import com.example.sdpoem.databinding.FragmentShicidbBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.nio.charset.StandardCharsets;
 
 public class ShicidbFragment extends Fragment {
 
@@ -64,7 +55,6 @@ public class ShicidbFragment extends Fragment {
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                Log.d("TAG", "onNavigationItemSelected: " + menuItem.getTitle());
                 EventBus.getDefault().post(new MessageEvent((String) menuItem.getTitle()));
                 return true;
             }

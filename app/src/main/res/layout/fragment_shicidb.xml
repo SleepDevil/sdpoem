@@ -19,9 +19,4 @@
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:navGraph="@navigation/shicidb_navigation" />
-    <!--    <fragment-->
-    <!--        android:id="@+id/rightShow"-->
-    <!--        android:name="com.example.sdpoem.ui.shicidb.ItemFragment"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent" />-->
 </LinearLayout>

@@ -54,7 +54,6 @@ public class ItemFragment extends Fragment {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(ShicidbFragment.MessageEvent event) {
         readData(event.ClickedName);
-        Log.d("TAG", "onMessageEvent: " + event.ClickedName);
     }
 
     private void readData(String name) {
@@ -64,6 +63,7 @@ public class ItemFragment extends Fragment {
         try {
             Gson gson = new Gson();
             switch (name) {
+                // 根据不同参数读取不同文件
                 case "全唐诗":
                     inputStream = getContext().getResources().openRawResource(R.raw.tangshisanbai);
                     break;
@@ -95,15 +95,14 @@ public class ItemFragment extends Fragment {
             JsonArray array = JsonParser.parseString(json).getAsJsonArray();
             for (JsonElement jelement : array) {
                 PlaceholderContent.PlaceholderItem poemBean = gson.fromJson(jelement, PlaceholderContent.PlaceholderItem.class);
-                Log.d("TAG", "readData: tatata" + poemBean.paragraphs);
-
+                // 由string转换至java object，并添加到list中
                 PlaceholderItemList.add(poemBean);
             }
             MyItemRecyclerViewAdapter mAdapter = new MyItemRecyclerViewAdapter(PlaceholderItemList);
 
             recyclerView.setAdapter(mAdapter);
         } catch (Exception e) {
-            Log.d("TAG", "MyItemRecyclerViewAdapter: errerer" + e);
+
         }
     }
 

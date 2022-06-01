@@ -1,5 +1,6 @@
 package com.example.sdpoem.ui.write;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,7 @@ public class PoemAdapter extends RecyclerView.Adapter<PoemAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
+        Log.d("TAG", "getItemCount: "+lcoalDataList.size());
         return lcoalDataList.size();
     }
 
@@ -59,8 +61,6 @@ public class PoemAdapter extends RecyclerView.Adapter<PoemAdapter.ViewHolder> {
 
         public ViewHolder(View view) {
             super(view);
-            // Define click listener for the ViewHolder's View
-
             titleText = (TextView) view.findViewById(R.id.title);
             contentText = (TextView) view.findViewById(R.id.content);
             writtenTimeText = (TextView) view.findViewById(R.id.written_time);

@@ -93,24 +93,7 @@ public class MyFragment extends Fragment {
             }
         });
         binding.username.setText(LoggedIn ? UserPref.getString("username", "用户名") : "用户名");
-        Log.d("TAG", "onCreateView: " + LoggedIn);
         binding.bottmBtn.setText(LoggedIn ? "退出登录" : "立即登录");
-//        binding.bottmBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (LoggedIn) {
-//                    // 此时为登录状态，进行退出登录逻辑
-//                    editor.putBoolean("loggedin", false).apply();
-//                    binding.bottmBtn.setText("立即登录");
-//                    binding.username.setText("用户名");
-//                    Toast.makeText(getContext(), "退出成功！", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    // 跳转到登录页面
-//                    Intent intent = new Intent(getContext(), LoginActivity.class);
-//                    intentActivityResultLauncher.launch(intent);
-//                }
-//            }
-//        });
 
         View root = binding.getRoot();
         return root;

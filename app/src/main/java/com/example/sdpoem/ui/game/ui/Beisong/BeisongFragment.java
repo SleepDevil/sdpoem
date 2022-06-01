@@ -66,7 +66,7 @@ public class BeisongFragment extends Fragment {
         AnsTextViewList.add(binding.ans2);
         AnsTextViewList.add(binding.ans3);
         AnsTextViewList.add(binding.ans4);
-        int randomAnsPos = random.nextInt(AnsTextViewList.size());
+        int randomAnsPos = random.nextInt(AnsTextViewList.size());// 记录正确答案的位置
         for (int i = 0; i < AnsTextViewList.size(); i++) {
             int finalI = i;
             AnsTextViewList.get(i).setOnClickListener(new View.OnClickListener() {
@@ -86,8 +86,6 @@ public class BeisongFragment extends Fragment {
             }
             AnsTextViewList.get(i).setText(paragraphs.get(random.nextInt(paragraphs.size())));
         }
-
-//        return inflater.inflate(R.layout.activity_beisong, container, false);
         return binding.getRoot();
     }
 
@@ -118,9 +116,7 @@ public class BeisongFragment extends Fragment {
                     paragraphs.add(p.split("，")[1]);
                 }
             }
-            Log.d("TAG", "readData: " + paragraphs);
         } catch (Exception e) {
-            Log.d("TAG", "MyItemRecyclerViewAdapter: errerer" + e);
         }
     }
 
