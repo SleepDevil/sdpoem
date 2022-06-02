@@ -68,7 +68,6 @@ public class ItemFragment extends Fragment {
                     inputStream = getContext().getResources().openRawResource(R.raw.tangshisanbai);
                     break;
                 case "全宋诗":
-                    Log.d("TAG", "readData: 进入咯");
                     inputStream = getContext().getResources().openRawResource(R.raw.songshi);
                     break;
                 case "全宋词":
